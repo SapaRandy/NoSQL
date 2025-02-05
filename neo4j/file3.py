@@ -53,10 +53,12 @@ def recommend_movies(liked_actor_name):
     ORDER BY year DESC
     """
 
-    results = run_query(query)
-    return results
+    with driver.session() as session:
+        result = session.run(query)
+        results_list = list(result)
+    return results_list
 
-liked_actor_name = "Tom Hanks"
+liked_actor_name = "Meryl Streep"
 recommended_movies = recommend_movies(liked_actor_name)
 
 print(f"Movie recommendations based on liking {liked_actor_name}:")

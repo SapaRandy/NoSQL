@@ -27,3 +27,4 @@ relationship3 = "MATCH (a:Person {name: 'Bob'}), (b:Person {name: 'Charlie'}) CR
 run_query(relationship1)
 run_query(relationship2)
 run_query(relationship3)
+
